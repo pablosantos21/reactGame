@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
 
@@ -106,14 +105,14 @@ function App() {
     },
     {
       id:14,
-      imageURL:"https://static.wikia.nocookie.net/rickandmorty/images/a/a6/Rick_Sanchez.png/revision/latest/top-crop/width/360/height/360?cb=20160923150728",
+      imageURL:"https://vader.news/__export/1592454315077/sites/gadgets/img/2020/06/18/rick-morty.jpg_109227377.jpg",
       cover:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEUAAP+KeNJXAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC",
       flipped:false,
       win:false
     },
     {
       id:15,
-      imageURL:"https://static.wikia.nocookie.net/rickandmorty/images/a/a6/Rick_Sanchez.png/revision/latest/top-crop/width/360/height/360?cb=20160923150728",
+      imageURL:"https://vader.news/__export/1592454315077/sites/gadgets/img/2020/06/18/rick-morty.jpg_109227377.jpg",
       cover:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEUAAP+KeNJXAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC",
       flipped:false,
       win:false
@@ -184,21 +183,20 @@ function App() {
   
 
     
-  const restart= ()=>{
-    //TODO
-  }
+  
   
   
 
   return (
     <div id="main">
+      <h1>Memory game</h1>
       {cards.map(card=>
         <div key={card.id} className="card">
         <img  onClick={()=>voltear(card.id,card.imageURL)} src={card.flipped ? card.imageURL:card.cover}/>
         </div>
       )}  
-    <h1>{won===16?"YOU WON":""}</h1>
-    <button onClick={restart}>Restart game</button>
+    <h1>{won===16?"YOU WON":(16-won)+" cards por descubrir"}</h1>
+    <button onClick={()=>window.location.reload()}>Restart game</button>
     </div>
     
   );
