@@ -148,7 +148,7 @@ function App() {
   }
   useEffect(()=>{
     const timeout = setTimeout(() => {
-      if(intentos.length==2 ){
+      if(intentos.length===2 ){
         if(intentos[0]===intentos[1]){
           console.log("correcto")
           setWon(won+1)
@@ -182,10 +182,6 @@ function App() {
   },[intentos,cards])
   
 
-    
-  
-  
-  
 
   return (
     <div id="main">
